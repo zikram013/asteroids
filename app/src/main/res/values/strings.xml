@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Asteroids</string>
+    <string name="tituloApp">Asteroids</string>
+    <string name="jugar">Jugar</string>
+    <string name="opciones">Opciones</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="puntuaciones">Ranking</string>
+    <string name="otro_texto">Otro texto</string>
+    <string name="menu_principal">Menu principal</string>
+    <string name="guardar_puntuacion">Guardar puntuacion</string>
+</resources>
