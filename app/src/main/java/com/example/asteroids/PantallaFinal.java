@@ -39,7 +39,7 @@ public class PantallaFinal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fin);
         mostrarDatos=findViewById(R.id.mostrarPuntos);
-        player=findViewById(R.id.nombrePlayer);
+        //player=findViewById(R.id.nombrePlayer);
         recibe=getIntent();
         puntos=recibe.getExtras();
         assert puntos!=null;
@@ -106,7 +106,7 @@ public class PantallaFinal extends AppCompatActivity {
             for(int i = 0; i < punt.size(); i++){
                 //writer.println(punt.get(i));
                 System.out.println(punt.get(i));
-                fos.write(String.valueOf(punt.get(i)).getBytes());
+                fos.write(String.valueOf(punt.get(i)+"\n").getBytes());
             }
             fos.close();
 
