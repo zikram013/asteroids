@@ -26,6 +26,7 @@ public class Puntuaciones extends AppCompatActivity {
     private MiAdaptador miAdaptador;
     private static final String FICHERO="puntuaciones.txt";
     private ArrayList<Integer>rank= new ArrayList<>();
+    private ArrayList<Integer>verdaderoRanking=new ArrayList<>();
     TextView lista;
     Button menuPrincipal;
     ListView sublista;
@@ -65,10 +66,10 @@ public class Puntuaciones extends AppCompatActivity {
         }
         if (!rank.isEmpty()){
             Collections.sort(rank,Collections.reverseOrder());
-            for (int i=0;i<rank.size();i++){
-                System.out.println(rank.get(i));
+            for (int i=0;i==4;i++){
+                verdaderoRanking.add(rank.get(i));
             }
-            ArrayAdapter adapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,rank);
+            ArrayAdapter adapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,verdaderoRanking);
             sublista.setAdapter(adapter);
         }else{
             lista.setText("No hay puntuaciones para mostrar en el ranking");
