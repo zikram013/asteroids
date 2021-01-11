@@ -61,7 +61,7 @@ public class PantallaFinal extends AppCompatActivity {
                 System.out.println("puntuacion: "+i+" "+puntFichero.get(i));
             }
             puntFichero.add(damePuntos);
-            Collections.sort(puntFichero,Collections.reverseOrder());
+            Collections.sort(puntFichero);
             guardar(puntFichero);
         }
 
