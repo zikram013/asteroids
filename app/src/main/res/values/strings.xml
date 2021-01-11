@@ -8,4 +8,6 @@
     <string name="otro_texto">Otro texto</string>
     <string name="menu_principal">Menu principal</string>
     <string name="guardar_puntuacion">Guardar puntuacion</string>
+    <string name="volver">volver</string>
+    <string name="todo">TODO</string>
 </resources>

@@ -89,7 +89,7 @@ public class VistaJuego extends View {
             do{
                 asteroide.setCenX((int) (Math.random()*w));
                 asteroide.setCenY((int)(Math.random()*h));
-            }while(asteroide.distancia(nave)<(w+h)/5);
+            }while(asteroide.distancia(nave)<(w+h)/2);
 
         }
         nave.setCenX(w/2);

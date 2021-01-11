@@ -9,6 +9,6 @@
         android:id="@+id/VistaJuego"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/fondo"
+        android:background="@drawable/fondo2"
         android:focusable="true" />
 </LinearLayout>

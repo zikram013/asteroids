@@ -7,16 +7,16 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="30dp"
-    tools:context=".MainActivity">
-
-    <TextView
+    android:background="@color/black"
+    tools:context=".MainActivity"
+    >
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tituloApp"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:layout_marginBottom="20dp"
-        />
+        android:background="@drawable/title"
+    />
+
 
     <Button
         android:id="@+id/play"
@@ -24,17 +24,13 @@
         android:layout_height="wrap_content"
         android:onClick="iniciarJuego"
         android:text="@string/jugar" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/options"
-        android:text="@string/opciones"
-        />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/help"
         android:text="@string/ayuda"
+        android:onClick="mostrarAyuda"
         />
 
     <Button

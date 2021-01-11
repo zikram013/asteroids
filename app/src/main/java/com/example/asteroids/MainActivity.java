@@ -25,17 +25,6 @@ public class MainActivity extends AppCompatActivity {
          mostrarPuntuaciones=findViewById(R.id.ranking);
          help=findViewById(R.id.help);
          jugar=findViewById(R.id.play);
-
-/*
-         mostrarPuntuaciones.setOnClickListener(v -> {
-             Intent i = new Intent(MainActivity.this,Puntuaciones.class);
-             startActivity(i);
-         });
-        jugar.setOnClickListener(v -> {
-            Intent i = new Intent(MainActivity.this,Juego.class);
-            startActivityForResult(i,ACTIV_JUEGO);
-        });*/
-
     }
 
     public void iniciarJuego(View v){
