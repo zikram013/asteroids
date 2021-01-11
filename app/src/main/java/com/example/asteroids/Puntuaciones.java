@@ -64,7 +64,10 @@ public class Puntuaciones extends AppCompatActivity {
             e.printStackTrace();
         }
         if (!rank.isEmpty()){
-            Collections.sort(rank);
+            Collections.sort(rank,Collections.reverseOrder());
+            for (int i=0;i<rank.size();i++){
+                System.out.println(rank.get(i));
+            }
             ArrayAdapter adapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,rank);
             sublista.setAdapter(adapter);
         }else{
