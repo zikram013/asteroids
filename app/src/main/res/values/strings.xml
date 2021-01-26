@@ -10,4 +10,6 @@
     <string name="guardar_puntuacion">Guardar puntuacion</string>
     <string name="volver">volver</string>
     <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="mejores_puntuaciones">Mejores puntuaciones</string>
 </resources>
