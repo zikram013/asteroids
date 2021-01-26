@@ -1,5 +1,6 @@
 package com.example.asteroids;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,14 +24,13 @@ public class Puntuaciones extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
-    private MiAdaptador miAdaptador;
     private static final String FICHERO="puntuaciones.txt";
     private ArrayList<Integer>rank= new ArrayList<>();
-    private ArrayList<Integer>verdaderoRanking=new ArrayList<>();
     TextView lista;
     Button menuPrincipal;
     ListView sublista;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -66,31 +66,13 @@ public class Puntuaciones extends AppCompatActivity {
         }
         if (!rank.isEmpty()){
             Collections.sort(rank,Collections.reverseOrder());
-            for (int i=0;i==4;i++){
-                verdaderoRanking.add(rank.get(i));
-            }
-            ArrayAdapter adapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,verdaderoRanking);
+            ArrayAdapter adapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,rank);
             sublista.setAdapter(adapter);
         }else{
             lista.setText("No hay puntuaciones para mostrar en el ranking");
         }
 
 
-
-            /*
-            recyclerView=(RecyclerView)findViewById(R.id.recycler_view);
-            miAdaptador=new MiAdaptador(this,MainActivity.almacenPuntuaciones.listaPuntuaciones(10));
-            recyclerView.setAdapter(miAdaptador);
-            layoutManager=new LinearLayoutManager(this);
-            recyclerView.setLayoutManager(layoutManager);
-            miAdaptador.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v) {
-                    int pos=recyclerView.getChildAdapterPosition(v);
-                    String s=MainActivity.almacenPuntuaciones.listaPuntuaciones(10).get(pos);
-                    Toast.makeText(Puntuaciones.this,"Seleccion: "+pos+"-"+s,Toast.LENGTH_LONG).show();
-                }
-            });*/
     }
     public void inicio(View v){
         Intent i= new Intent(this,MainActivity.class);

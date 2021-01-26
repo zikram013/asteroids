@@ -4,18 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.PathShape;
-import android.graphics.drawable.shapes.RectShape;
-import android.graphics.drawable.shapes.Shape;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -51,12 +43,18 @@ public class VistaJuego extends View {
     //Puntuaciones
     private int puntuacion=0;
     private Activity juego;
-
+    //Sonido
+    SoundPool sp;
+    int sonidoReproduccionDisparo,sonidoReproduccionColision,sonidoReproduccionColisionNave;
 
 
     @SuppressLint("UseCompatLoadingForDrawables")
     public VistaJuego(Context context, AttributeSet attributeSet){
         super(context,attributeSet);
+        sp=new SoundPool(1, AudioManager.STREAM_MUSIC,1);
+        sonidoReproduccionDisparo =sp.load(context,R.raw.shoot,1);
+        sonidoReproduccionColision=sp.load(context,R.raw.colisionwithasteroid,1);
+        sonidoReproduccionColisionNave=sp.load(context,R.raw.colisionwithnave,1);
         Drawable drawableNave,drawableMisil;
         //drawableAsteroide=context.getResources().getDrawable(R.drawable.asteroide1);
         drawableAsteroide[0]=context.getResources().getDrawable(R.drawable.asteroide1);
@@ -141,6 +139,7 @@ public class VistaJuego extends View {
                 for (int i=0;i<asteroides.size();i++)
                     if(misil.colisiona(asteroides.elementAt(i))){
                         colisionConAsteroide(i);
+                        efectoColision();
                         disparado=true;
                         break;
                     }
@@ -149,6 +148,7 @@ public class VistaJuego extends View {
         }
         for (Grafico asteroide:asteroides){
             if(asteroide.colisiona(nave)){
+                efectoColisionNaveConAsteroide();
                 salir();
             }
         }
@@ -180,6 +180,7 @@ public class VistaJuego extends View {
                 fpsNave=0;
                 if(disparo){
                     activaMisil();
+                    efectoDisparo();
                 }
                 break;
         }
@@ -273,5 +274,15 @@ public class VistaJuego extends View {
                 }
             }
         }
+    }
+    public void efectoDisparo(){
+        sp.play(sonidoReproduccionDisparo,1,1,1,0,0);
+    }
+
+    public void efectoColision(){
+        sp.play(sonidoReproduccionColision,1,1,1,0,0);
+    }
+    public void efectoColisionNaveConAsteroide(){
+        sp.play(sonidoReproduccionColisionNave,1,1,1,0,0);
     }
 }
