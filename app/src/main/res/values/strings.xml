@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Asteroids</string>
     <string name="tituloApp">Asteroids</string>
     <string name="jugar">Jugar</string>
@@ -9,7 +9,6 @@
     <string name="menu_principal">Menu principal</string>
     <string name="guardar_puntuacion">Guardar puntuacion</string>
     <string name="volver">volver</string>
-    <string name="todo">TODO</string>
     <string name="todo">TODO</string>
     <string name="mejores_puntuaciones">Mejores puntuaciones</string>
 </resources>

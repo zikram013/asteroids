@@ -22,8 +22,6 @@ import java.util.Collections;
 
 public class Puntuaciones extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
     private static final String FICHERO="puntuaciones.txt";
     private ArrayList<Integer>rank= new ArrayList<>();
     TextView lista;
